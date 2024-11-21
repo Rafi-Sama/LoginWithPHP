@@ -1,34 +1,11 @@
-<?php include 'partials/header.php'; ?>
-<?php require_once 'partials/signupreq.php'; ?>
-<?php
-if ($showAlert) {
-    echo '<div class="flex inline-flex justify-evenly bg-green-300 border border-teal-400 text-teal-700 px-4 py-3 my-2 w-[280px] rounded absolute right-2" role="alert">
-    <span class="inline" onclick="return this.parentNode.remove();">
-    <svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title> <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
-    </span>
-    <span class="block sm:inline pl-2">
-        <strong class="font-bold">Success</strong>
-    </span>
-    <span class="block sm:inline pl-2">
-        ->
-    </span>
-    <span class="block sm:inline pl-2">
-        Signed up !!
-    </span>
-</div>';
-}
-if ($showError) {
-    echo '<div class="flex inline-flex justify-evenly bg-red-300 border border-teal-400 text-teal-700 px-4 py-3 my-2 w-[280px] rounded absolute right-2"
-    role="alert">
-    <span class="inline" onclick="return this.parentNode.remove();"><svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
-    </span>
-    <span class="block sm:inline pl-2">
-        <strong class="font-bold">Error!</strong>
-    </span>
-    <span class="block sm:inline pl-2">
-        ' . $showError . '
-    </span>
-</div>';
+<?php 
+require_once 'function.php'; 
+require_once 'partials/header.php'; 
+
+if(isset($_POST["submit"])){
+    $register = new Register();
+    $result = $register->registration($_POST["username"], $_POST["password"], $_POST["cpassword"]);
+    echo "<script> alert('$result')</script>";
 }
 ?>
 
@@ -61,7 +38,7 @@ if ($showError) {
 
             <!-- Submit Button -->
             <button type="submit"
-                class="w-full mt-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                class="w-full mt-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500" name="submit">
                 Sign Up
             </button>
         </form>

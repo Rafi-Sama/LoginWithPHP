@@ -17,7 +17,7 @@
     <h1 class="text-5xl font-bold text-center my-6">Hi, there <?php echo $_SESSION['username']?></h1>
     <div class="flex gap-4 align-center justify-center">
     <h1 class="text-2xl font-bold text-center my-6">Would you</h1>
-    <a href="/LoginWithPHP/procedural/logout.php" class="bg-red-600 my-auto text-white font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 p-5">Logout</a>
+    <a href="/LoginWithPHP/oops/logout.php" class="bg-red-600 my-auto text-white font-semibold rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 p-5">Logout</a>
     <h1 class="text-2xl font-bold text-center my-6">?</h1>
     </div>
 </body>
