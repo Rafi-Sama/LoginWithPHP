@@ -4,11 +4,9 @@ $login = false;
 $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $err = "";
-    include 'database/_dbconnect.php';
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $exists = false;
-
+    
     $sql = "Select * from users where username = '$username'";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);

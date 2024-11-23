@@ -4,7 +4,6 @@ $showAlert = false;
 $showError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $err = "";
-    include 'database/_dbconnect.php';
 
     $username = $_POST["username"];
     $password = $_POST["password"];
