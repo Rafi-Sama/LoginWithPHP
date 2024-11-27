@@ -12,11 +12,8 @@
         <!-- Header -->
         <header class="flex items-center justify-between">
             <h1 class="text-4xl font-extrabold text-gray-800 dark:text-gray-100">Dashboard</h1>
-            <button
-                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
-                wire:click="signup">
-                Logout
-            </button>
+            <livewire:logout />
+
         </header>
 
         <!-- Content Section -->
